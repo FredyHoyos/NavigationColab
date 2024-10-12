@@ -81,6 +81,9 @@ android {
 }
 
 dependencies {
+    implementation 'junit:junit:4.12'
+    implementation 'androidx.compose.ui:ui-test-junit4:1.7.3'
+    implementation 'androidx.navigation:navigation-testing:2.8.2'
     def composeBom = platform('androidx.compose:compose-bom:2024.09.03')
     implementation(composeBom)
     androidTestImplementation(composeBom)
@@ -91,6 +94,9 @@ dependencies {
 
     // Navigation
     implementation "androidx.navigation:navigation-compose:2.8.0"
+
+    debugImplementation("androidx.compose.ui:ui-tooling:1.7.3")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:1.7.3")
 
     // Compose
     implementation "androidx.compose.runtime:runtime"
@@ -105,11 +111,8 @@ dependencies {
     androidTestImplementation "androidx.arch.core:core-testing:2.2.0"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:3.6.1"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.6.1"
-
-    // Compose testing dependencies
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
-    debugImplementation "androidx.compose.ui:ui-test-manifest"
 }
+
 
 tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
     kotlinOptions {
